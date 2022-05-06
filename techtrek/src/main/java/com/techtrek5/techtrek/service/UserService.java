@@ -15,17 +15,17 @@ public class UserService implements IService{
     private UserModel userModel;
 
     @Override
-    public String findByusername(String username) {
+    public Optional<UserModel> findByusername(String username) {
         return iDao.findByusername(username);
     }
 
     @Override
-    public String findByname(String name) {
+    public Optional<UserModel> findByname(String name) {
         return iDao.findByname(name);
     }
 
     @Override
-    public String findByappointment(String appointment) {
+    public Optional<UserModel> findByappointment(String appointment) {
         return iDao.findByappointment(appointment);
     }
 

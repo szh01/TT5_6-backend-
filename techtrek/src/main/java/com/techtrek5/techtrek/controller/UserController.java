@@ -20,13 +20,28 @@ public class UserController {
         return "hello";
     }
 
-    @PostMapping(path = "/findid/{id}")
-    public Optional<UserModel> healthcheck(@PathVariable("id") long id){//test for controller response
-        return userService.findByid(id);
-    }
-
     @PostMapping(path = "/save")
     public String save(@RequestBody UserModel userModel){//test for controller response
         return userService.save(userModel);
+    }
+
+    @PostMapping(path = "/findid/{id}")
+    public Optional<UserModel> findId(@PathVariable("id") long id){//test for controller response
+        return userService.findByid(id);
+    }
+
+    @PostMapping(path = "/findusername/{username}")
+    public Optional<UserModel> findUsername(@PathVariable("username") String username){//test for controller response
+        return userService.findByusername(username);
+    }
+
+    @PostMapping(path = "/findname/{name}")
+    public Optional<UserModel> findName(@PathVariable("name") String name){//test for controller response
+        return userService.findByname(name);
+    }
+
+    @PostMapping(path = "/findappointment/{appointment}")
+    public Optional<UserModel> findAppointment(@PathVariable("appointment") String appointment){//test for controller response
+        return userService.findByappointment(appointment);
     }
 }
