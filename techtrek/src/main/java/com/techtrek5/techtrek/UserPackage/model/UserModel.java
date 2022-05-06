@@ -1,4 +1,4 @@
-package com.techtrek5.techtrek.model;
+package com.techtrek5.techtrek.UserPackage.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

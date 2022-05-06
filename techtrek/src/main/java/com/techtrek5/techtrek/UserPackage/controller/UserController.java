@@ -1,11 +1,11 @@
-package com.techtrek5.techtrek.controller;
+package com.techtrek5.techtrek.UserPackage.controller;
 
-import com.techtrek5.techtrek.model.UserModel;
-import com.techtrek5.techtrek.service.UserService;
+import com.techtrek5.techtrek.UserPackage.model.UserModel;
+import com.techtrek5.techtrek.UserPackage.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Access;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -31,17 +31,17 @@ public class UserController {
     }
 
     @PostMapping(path = "/findusername/{username}")
-    public Optional<UserModel> findUsername(@PathVariable("username") String username){//test for controller response
+    public Optional<List<UserModel>> findUsername(@PathVariable("username") String username){//test for controller response
         return userService.findByusername(username);
     }
 
     @PostMapping(path = "/findname/{name}")
-    public Optional<UserModel> findName(@PathVariable("name") String name){//test for controller response
+    public Optional<List<UserModel>> findName(@PathVariable("name") String name){//test for controller response
         return userService.findByname(name);
     }
 
     @PostMapping(path = "/findappointment/{appointment}")
-    public Optional<UserModel> findAppointment(@PathVariable("appointment") String appointment){//test for controller response
+    public Optional<List<UserModel>> findAppointment(@PathVariable("appointment") String appointment){//test for controller response
         return userService.findByappointment(appointment);
     }
 }

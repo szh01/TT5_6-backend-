@@ -1,11 +1,11 @@
-package com.techtrek5.techtrek.service;
+package com.techtrek5.techtrek.UserPackage.service;
 
-import com.techtrek5.techtrek.dao.IDao;
-import com.techtrek5.techtrek.model.UserModel;
+import com.techtrek5.techtrek.UserPackage.dao.IDao;
+import com.techtrek5.techtrek.UserPackage.model.UserModel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.yaml.snakeyaml.events.Event;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,17 +15,17 @@ public class UserService implements IService{
     private UserModel userModel;
 
     @Override
-    public Optional<UserModel> findByusername(String username) {
+    public Optional<List<UserModel>> findByusername(String username) {
         return iDao.findByusername(username);
     }
 
     @Override
-    public Optional<UserModel> findByname(String name) {
+    public Optional<List<UserModel>> findByname(String name) {
         return iDao.findByname(name);
     }
 
     @Override
-    public Optional<UserModel> findByappointment(String appointment) {
+    public Optional<List<UserModel>> findByappointment(String appointment) {
         return iDao.findByappointment(appointment);
     }
 
